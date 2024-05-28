@@ -27,17 +27,19 @@ class MyApp extends StatelessWidget {
               ),
           ]
         ),
-        body: Stack(
-          alignment: Alignment.bottomRight,
-          children: [
-            //big box
-            Container( height: 300, width: 300, color: Colors.deepPurple, child: Text("Big Box"),),
-            //medium box
-            Container( height: 200, width: 200, color: Colors.deepPurple[400], child: Text("Med Box"),),
-            //small box
-            Container( height: 100, width: 100, color: Colors.deepPurple[200], child: Text("Small Box"),),
-          ],
-          )
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              print("user tapped the container");
+            },
+            child: Container( 
+              height: 200,
+              width: 200,
+              color: Colors.deepPurple[300],
+              child: Center( child: Text("Tap me!"))
+            ),
+          ),
+        )
       ),
     );
     
