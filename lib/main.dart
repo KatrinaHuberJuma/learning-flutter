@@ -25,33 +25,29 @@ class MyApp extends StatelessWidget {
               ),
           ]
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
+          scrollDirection: Axis.vertical,
           children: [
             // 1st box
-            Expanded(
-              flex: 1,
-              child: Container(
+            
+            Container(
+              height: 500,
                 color: Colors.green,
               ),
-            ),
             
             // 2nd box
-            Expanded(
-              flex: 2,
-              child: Container(
+            
+            Container(
+              height: 500,
                 color: Colors.lightGreen,
               ),
-            ),
             
             // 3rd box
-            Expanded(
-              flex: 5,
-              child:  Container(
+            
+              Container(
+                height: 500,
                 color: Colors.lightGreenAccent,
               ),
-            ),
           ],
 
           )
