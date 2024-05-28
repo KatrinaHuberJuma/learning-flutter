@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  List names = ["Decky", "Ash", "Nugget", "Sparkles", "Blue", "Paco", "Mochi"]; // non-const before const!
+  MyApp({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -25,32 +27,12 @@ class MyApp extends StatelessWidget {
               ),
           ]
         ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            // 1st box
-            
-            Container(
-              height: 500,
-                color: Colors.green,
-              ),
-            
-            // 2nd box
-            
-            Container(
-              height: 500,
-                color: Colors.lightGreen,
-              ),
-            
-            // 3rd box
-            
-              Container(
-                height: 500,
-                color: Colors.lightGreenAccent,
-              ),
-          ],
-
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) =>ListTile(
+            title: Text(names[index])
           )
+        )
       ),
     );
     
