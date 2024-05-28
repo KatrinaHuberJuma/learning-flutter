@@ -27,12 +27,16 @@ class MyApp extends StatelessWidget {
               ),
           ]
         ),
-        body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (context, index) =>ListTile(
-            title: Text(names[index])
+        body: GridView.builder(
+          itemCount: 64,
+          gridDelegate:
+            // how many in each row
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+          itemBuilder: (context, index) => Container(
+            color: Colors.deepPurple,
+            margin: EdgeInsets.all(2),
+            )
           )
-        )
       ),
     );
     
