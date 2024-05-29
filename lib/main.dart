@@ -8,6 +8,9 @@ class MyApp extends StatelessWidget {
   List names = ["Decky", "Ash", "Nugget", "Sparkles", "Blue", "Paco", "Mochi"]; // non-const before const!
   MyApp({super.key});
   
+  void userTappedContainer() {
+    print("user tapped the container");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: GestureDetector(
-            onTap: () {
-              print("user tapped the container");
-            },
+            onTap: userTappedContainer,
             child: Container( 
               height: 200,
               width: 200,
